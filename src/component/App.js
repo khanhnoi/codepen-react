@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Editer from './Editer';
 
 function App() {
@@ -10,14 +10,15 @@ function App() {
        <body>
           ${html}
        </body>
-       <styles>
+       <style>
           ${css}
-       </styles>
+       </style>
        <script>
           ${javaScript}
        </script>
     </html>
   `;
+
 
 	return (
 		<>

@@ -4,14 +4,14 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 
 // import CodeMirror from 'react-codemirror2';
-require('codemirror/mode/xml/xml');
-require('codemirror/mode/javascript/javascript');
+import ('codemirror/mode/xml/xml');
+import ('codemirror/mode/javascript/javascript');
 // require('codemirror/mode/css/css');
 
 export default function Editer(props) {
     const { displayName , language, value , onChange} = props;
     function handleChange(editor, data, value) {
-        onChange();
+        onChange(value);
     } 
 	return (
 		<>
