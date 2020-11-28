@@ -6,13 +6,13 @@ import 'codemirror/theme/material.css';
 // import CodeMirror from 'react-codemirror2';
 import ('codemirror/mode/xml/xml');
 import ('codemirror/mode/javascript/javascript');
-// require('codemirror/mode/css/css');
+import('codemirror/mode/css/css');
 
 export default function Editer(props) {
     const { displayName , language, value , onChange} = props;
     function handleChange(editor, data, value) {
         onChange(value);
-    } 
+    }
 	return (
 		<>
 			<div className="editor-container">
@@ -40,8 +40,9 @@ export default function Editer(props) {
                             Alternatively, it may be an object containing configuration options for the mode,
                             with a name property that names the mode (for example {name: "javascript", json: true}). */
                             mode: language, /* xml or css or js ...*? */
+                            theme: "material",
                             lineNumber: true,
-                            theme: "material"
+                            
                         }}
 					/>
 			</div>
