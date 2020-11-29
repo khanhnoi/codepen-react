@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Controlled as CodeMirrorEditor } from 'react-codemirror2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons'
+
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 
@@ -8,17 +11,23 @@ import ('codemirror/mode/xml/xml');
 import ('codemirror/mode/javascript/javascript');
 import('codemirror/mode/css/css');
 
+
+
 export default function Editer(props) {
     const { displayName , language, value , onChange} = props;
+    const [isOpen, setIsOpen] = useState(true);
+    const elementOpen = <FontAwesomeIcon icon={faArrowsAltH} />
     function handleChange(editor, data, value) {
         onChange(value);
     }
 	return (
 		<>
-			<div className="editor-container">
+			<div className={`editor-container open-${isOpen}`}>
 				<div className="editor-title">
 					{displayName}
-					<button>O/C</button>
+					<button onClick={() => setIsOpen(!isOpen)}>
+                        {elementOpen}
+                    </button>
 				</div>
                 <CodeMirrorEditor
 						// value={this.state.value}

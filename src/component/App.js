@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
 import Editer from './Editer';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 function App() {
-	const [html, setHtml] = useState('');
-	const [css, setCss] = useState('');
-	const [javaScript, setJavaScript] = useState('');
+	// const [html, setHtml] = useState('');
+	// const [css, setCss] = useState('');
+  // const [javaScript, setJavaScript] = useState('');
+  
+  const [html, setHtml] = useLocalStorage("html", "");
+	const [css, setCss] = useLocalStorage("css", "");
+	const [javaScript, setJavaScript] = useLocalStorage("javascript", "");
 	const [srcDoc, setSrcDoc] = useState('');
 
   useEffect(() => {
@@ -33,7 +38,7 @@ function App() {
 				<Editer language="javascript" displayName="JavaScript" value={javaScript} onChange={setJavaScript} />
 			</div>
 			<div className="pane bottom-pane">
-				<iframe srcDoc={srcDoc} title="output" sandbox="allow-script" frameBorder="0" width="100%" height="100%" />
+				<iframe srcDoc={srcDoc} title="output" sandbox="allow-scripts" frameBorder="0" width="100%" height="100%" />
 			</div>
 		</>
 	);

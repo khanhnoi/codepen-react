@@ -8,7 +8,7 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 12px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-track {
@@ -18,12 +18,16 @@ body {
 
 *::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 20px rgba(33, 225, 215, 0.6); 
+  -webkit-box-shadow: inset 0 0 20px rgba(18, 146, 140, 0.6); 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  cursor: pointer;
 }
 
 .pane {
@@ -49,6 +53,13 @@ code {
   display: flex;
   flex-direction: column;
   padding: .5rem;
+  transition: 0.5s;
+}
+.open-true {
+  flex-grow: 10;
+}
+.open-false {
+  flex-grow: 1;
 }
 
 .editor-title {
@@ -64,6 +75,10 @@ code {
 /* custom */
 .CodeMirror {
   height: 100% !important;
+}
+.CodeMirror .CodeMirror-scroll {
+  position: absolute;
+  width: 100%;
 }
 .code-mirror-wrapper {
   flex-grow: 1;
