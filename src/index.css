@@ -38,9 +38,28 @@ button {
 .top-pane {
   background-color: hsl(255,6%,25%);
   height: 50vh;
+  transition: .5s;
+}
+.btn-expand {
+  position: fixed;
+  top:50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translateX(-50%) translateY(-50%);
+  border: thin solid #000;
+  background-color: #fff;
+  padding: 1px 9px;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: .5s;
+}
+.btn-expand:hover {
+  opacity: 1;
 }
 .bottom-pane {
   min-height: 50vh;
+  max-height: 100vh;
+  transition: .5s;
 }
 .bottom-pane iframe {
   height: 100%;

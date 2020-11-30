@@ -1,4 +1,3 @@
-import { prefix } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect} from 'react'
 
 const PREFIX = "codepen-kn-";
